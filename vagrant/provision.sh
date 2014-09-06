@@ -6,6 +6,9 @@ echo deb http://dl.hhvm.com/debian wheezy main | tee /etc/apt/sources.list.d/hhv
 echo "running update"
 apt-get update
 
+echo "installing vim"
+apt-get install vim -y
+
 echo "installing nginx"
 apt-get install nginx -y
 
