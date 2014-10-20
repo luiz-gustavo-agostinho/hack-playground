@@ -23,4 +23,15 @@ apt-get install hhvm -y
 
 ln -s /hack-playground/ /usr/share/nginx/www/
 
+echo "config hack vim"
+mkdir -p /home/vagrant/.vim/autoload /home/vagrant/.vim/bundle
+curl -LSso /home/vagrant/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+echo "execute pathogen#infect()" > /home/vagrant/.vimrc
+echo "syntax on" >> /home/vagrant/.vimrc
+echo "filetype plugin indent on" >> /home/vagrant/.vimrc
+
+cd /home/vagrant/.vim/bundle
+git clone git://github.com/hhvm/vim-hack.git
+
 echo "provision end"
